@@ -9,9 +9,9 @@ class BaseConverter extends React.Component {
   }
 
   handleChange(value, base) {
-    const valueInGivenBase = parseInt(value, base);
-    if (valueInGivenBase) {
-      this.setState({ value: valueInGivenBase });
+    let newValue = value === '' ? value : parseInt(value, base);
+    if (!isNaN(newValue)) {
+      this.setState({ value: newValue });
     }
   }
 
