@@ -2,7 +2,11 @@ import React from 'react';
 import BaseConverter from './BaseConverter.js';
 
 const App = () => {
-  return <BaseConverter bases={[2, 8, 10]} />;
+  return (
+    <BaseConverter
+      bases={[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]}
+    />
+  );
 };
 
 export default App;
