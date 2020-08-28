@@ -1,13 +1,27 @@
 import React from 'react';
-import Input from './Input.js';
+import InputBox from './InputBox.js';
+
 class BaseConverter extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: 200 };
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  handleChange(value, base) {
+    this.setState({ value: value });
+  }
+
   render() {
-    // return <div>{this.state.value}</div>;
-    return <Input value={this.state.value} />;
+    const inputBoxes = this.props.bases.map((base) => (
+      <InputBox
+        base={base}
+        key={base}
+        onChange={this.handleChange}
+        value={this.state.value}
+      />
+    ));
+    return <div>{inputBoxes}</div>;
   }
 }
 
