@@ -5,15 +5,12 @@ import './baseConverter.css';
 class BaseConverter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = { value: 0 };
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(value, base) {
-    let newValue = value === '' ? value : parseInt(value, base);
-    if (!isNaN(newValue)) {
-      this.setState({ value: newValue });
-    }
+  handleChange(value) {
+    this.setState({ value: value });
   }
 
   render() {
