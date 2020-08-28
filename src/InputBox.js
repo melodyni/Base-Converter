@@ -6,7 +6,7 @@ const InputBox = ({ base, value, onChange }) => {
       {`Base: ${base}`}
       <input
         base={base}
-        value={value}
+        value={value.toString(base)}
         onChange={(event) => onChange(event.target.value, base)}
       ></input>
     </label>

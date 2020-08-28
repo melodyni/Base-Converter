@@ -4,12 +4,15 @@ import InputBox from './InputBox.js';
 class BaseConverter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: 200 };
+    this.state = { value: '' };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(value, base) {
-    this.setState({ value: value });
+    const valueInGivenBase = parseInt(value, base);
+    if (valueInGivenBase) {
+      this.setState({ value: valueInGivenBase });
+    }
   }
 
   render() {
