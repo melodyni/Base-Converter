@@ -1,5 +1,6 @@
 import React from 'react';
 import InputBox from './InputBox.js';
+import './baseConverter.css';
 
 class BaseConverter extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class BaseConverter extends React.Component {
         value={this.state.value}
       />
     ));
-    return <div>{inputBoxes}</div>;
+    return <div className='flex'>{inputBoxes}</div>;
   }
 }
 
